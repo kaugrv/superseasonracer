@@ -1,0 +1,227 @@
+/* CSS - TP1 ARN-2304 - Wendy GERVAIS - AUT. 2023 */
+
+@font-face {
+	font-family: 'Daydream';
+	src: url('../fonts/Daydream.ttf') format('truetype');
+}
+
+html {
+	image-rendering: pixelated;
+	/* Pour éviter l'anti-aliasing sur le pixel art */
+}
+
+/* Général  */
+body {
+
+	width: 100%;
+	height: 100vh;
+
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-image: url('../images/fondCircuitImprimé.svg');
+	background-size: 100%;
+	user-select: none;
+	/* Pas de sélection (surlignage du texte en bleu) */
+	overflow-x: hidden;
+	/* Pour enlever le scrolling */
+}
+
+hr {
+	border: 5px solid black;
+}
+
+.bloc-intro {
+	background-color: #fff;
+	position: absolute;
+	display: flex;
+	padding: 50px;
+}
+
+.logo-intro {}
+
+.ship-wrap {
+	border: 5px solid black;
+	margin: 10px;
+	width: 650px;
+
+	background-image: url('../images/trame.jpg');
+	background-size: 100%;
+
+
+}
+
+.ship-intro {
+	animation: ship-intro-anim 8s ease-in-out infinite;
+	width: 700px;
+	position: relative;
+	z-index: 10;
+}
+
+.ship-intro:hover {
+	transform: scale(2);
+}
+
+@keyframes ship-intro-anim {
+	0% {
+		transform: translateY(160px);
+	}
+
+	50% {
+		transform: translateY(0px);
+	}
+
+	100% {
+		transform: translateY(160px);
+	}
+}
+
+@keyframes ship-fly {
+	0% {
+		transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(1200px);
+	}
+}
+
+.ship-shadow {
+	position: absolute;
+	left: 440px;
+	top: 420px;
+	animation: ship-intro-shadow-anim 8s ease-in-out infinite;
+	opacity: 50%;
+}
+
+@keyframes ship-intro-shadow-anim {
+	0% {
+		transform: scale(5);
+	}
+
+	50% {
+		transform: scale(3);
+	}
+
+	100% {
+		transform: scale(5);
+	}
+}
+
+.bloc-buttons {
+	background-color: #fff;
+	position: absolute;
+	top: 800px;
+	display: inline-block;
+	width: 800px;
+	border: solid black 5px;
+	padding: 10px 20px;
+	background-image: url('../images/trame.jpg');
+	background-size: 100%;
+}
+
+
+.speaker-button {
+	font-size: 2em;
+	cursor: pointer;
+
+}
+
+.help-button {
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.go-button {
+	font-size: 1em;
+	float: right;
+	justify-content: end;
+	font-family: Daydream;
+	cursor: pointer;
+	border: 5px solid black;
+	background-color: #fff;
+	padding: 10px;
+	transition-duration: 0.7s;
+}
+
+.go-button:hover {
+	transform: scale(1.2) rotate(5deg);
+	transition-duration: 0.3s;
+}
+
+.regles-jeu {
+	background-color: white;
+	width: 900px;
+	height: 800px;
+	border: solid 3px black;
+	padding: 20px;
+	z-index: 10;
+	display: none;
+	position: relative;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+	text-align: center;
+
+}
+
+.x-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 2em;
+}
+
+h1, h2, h3 {
+	font-family: Daydream;
+}
+
+/* Sprites animés */
+
+/* Coin */
+.coin-wrap, .coin-wrap-regles  {
+	background-image: url(../images/coinSprite.png);
+	width: 16px;
+	height: 16px;
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: solid 0px #ccc;
+	animation: coin 1s steps(5) infinite;
+	cursor: pointer;
+}
+
+.coin-wrap-regles {
+	transform: scale(2);
+	position: relative;
+	left:50%;
+	cursor:auto;
+
+}
+
+@keyframes coin {
+	100% {
+		background-position: -80px;
+	}
+}
+
+.bomb-wrap, .bomb-wrap-regles {
+	background-image: url(../images/bombSprite.png);
+	width: 30px;
+	height: 26px;
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.bomb-wrap-regles {
+	position: relative;
+	left:50%;
+	cursor:auto;
+	transform: scale(1.8);
+}
