@@ -1,227 +1,784 @@
 /* CSS - TP1 ARN-2304 - Wendy GERVAIS - AUT. 2023 */
 
+/* ------------------------ Général ------------------------  */
+
 @font-face {
-	font-family: 'Daydream';
-	src: url('../fonts/Daydream.ttf') format('truetype');
+  font-family: "Daydream";
+  src: url("../fonts/Daydream.ttf") format("truetype");
 }
 
 html {
-	image-rendering: pixelated;
-	/* Pour éviter l'anti-aliasing sur le pixel art */
+  image-rendering: pixelated;
+  /* Pour éviter l'anti-aliasing sur le pixel art */
+  scroll-behavior: smooth;
 }
 
-/* Général  */
 body {
+  margin: 0;
+  user-select: none;
+  /* Pas de sélection (surlignage du texte en bleu) */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* Pour enlever le scrolling */
+}
 
-	width: 100%;
-	height: 100vh;
+a {
+  text-decoration: none;
+}
 
-	padding: 0;
-	margin: 0;
+/* ------------------------ Introduction ------------------------  */
+.introduction {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/background/fondCircuit.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	background-image: url('../images/fondCircuitImprimé.svg');
-	background-size: 100%;
-	user-select: none;
-	/* Pas de sélection (surlignage du texte en bleu) */
-	overflow-x: hidden;
-	/* Pour enlever le scrolling */
+@keyframes fade-to-white {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 hr {
-	border: 5px solid black;
+  border: 5px solid black;
 }
 
 .bloc-intro {
-	background-color: #fff;
-	position: absolute;
-	display: flex;
-	padding: 50px;
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  padding: 50px;
 }
 
-.logo-intro {}
-
 .ship-wrap {
-	border: 5px solid black;
-	margin: 10px;
-	width: 650px;
-
-	background-image: url('../images/trame.jpg');
-	background-size: 100%;
-
-
+  border: 5px solid black;
+  margin: 10px;
+  width: 650px;
+  background-image: url("../images/background/trame.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .ship-intro {
-	animation: ship-intro-anim 8s ease-in-out infinite;
-	width: 700px;
-	position: relative;
-	z-index: 10;
-}
-
-.ship-intro:hover {
-	transform: scale(2);
+  animation: ship-intro-anim 8s ease-in-out infinite;
+  width: 677px;
+  position: relative;
+  cursor: pointer;
 }
 
 @keyframes ship-intro-anim {
-	0% {
-		transform: translateY(160px);
-	}
+  0% {
+    transform: translateY(160px);
+  }
 
-	50% {
-		transform: translateY(0px);
-	}
+  50% {
+    transform: translateY(0px);
+  }
 
-	100% {
-		transform: translateY(160px);
-	}
+  100% {
+    transform: translateY(160px);
+  }
 }
 
 @keyframes ship-fly {
-	0% {
-		transform: translateX(0px);
-	}
+  0% {
+    transform: translateX(0px);
+  }
 
-	100% {
-		transform: translateX(1200px);
-	}
+  100% {
+    transform: translateX(1200px);
+  }
 }
 
 .ship-shadow {
-	position: absolute;
-	left: 440px;
-	top: 420px;
-	animation: ship-intro-shadow-anim 8s ease-in-out infinite;
-	opacity: 50%;
+  position: absolute;
+  left: 440px;
+  top: 420px;
+  animation: ship-intro-shadow-anim 8s ease-in-out infinite;
+  opacity: 50%;
 }
 
 @keyframes ship-intro-shadow-anim {
-	0% {
-		transform: scale(5);
-	}
+  0% {
+    transform: scale(5);
+  }
 
-	50% {
-		transform: scale(3);
-	}
+  50% {
+    transform: scale(3);
+  }
 
-	100% {
-		transform: scale(5);
-	}
+  100% {
+    transform: scale(5);
+  }
 }
 
 .bloc-buttons {
-	background-color: #fff;
-	position: absolute;
-	top: 800px;
-	display: inline-block;
-	width: 800px;
-	border: solid black 5px;
-	padding: 10px 20px;
-	background-image: url('../images/trame.jpg');
-	background-size: 100%;
+  background-color: #fff;
+  position: absolute;
+  display: inline-block;
+  width: 800px;
+  top: 95%;
+  border: solid black 5px;
+  padding: 10px 20px;
+  background-image: url("../images/background/trame.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-
-.speaker-button {
-	font-size: 2em;
-	cursor: pointer;
-
+.speaker-button,
+.help-button,
+.copyright-button {
+  transform: scale(0.8);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  top: 50%;
 }
 
-.help-button {
-	font-size: 2em;
-	cursor: pointer;
+.speaker-button:hover,
+.help-button:hover,
+.copyright-button:hover {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
 }
 
 .go-button {
-	font-size: 1em;
-	float: right;
-	justify-content: end;
-	font-family: Daydream;
-	cursor: pointer;
-	border: 5px solid black;
-	background-color: #fff;
-	padding: 10px;
-	transition-duration: 0.7s;
+  font-size: 1em;
+  float: right;
+  justify-content: end;
+  font-family: Daydream;
+  cursor: pointer;
+  border: 5px solid black;
+  background-color: #fff;
+  padding: 10px;
+  transition-duration: 0.7s;
 }
 
 .go-button:hover {
-	transform: scale(1.2) rotate(5deg);
-	transition-duration: 0.3s;
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+  border: 5px solid white;
+  color: white;
+  background-color: black;
 }
 
 .regles-jeu {
-	background-color: white;
-	width: 900px;
-	height: 800px;
-	border: solid 3px black;
-	padding: 20px;
-	z-index: 10;
-	display: none;
-	position: relative;
-	box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-	text-align: center;
-
+  background-color: white;
+  width: 60vw;
+  border: solid 5px black;
+  padding: 20px;
+  z-index: 10;
+  display: none;
+  position: relative;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .x-button {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 10px;
-	cursor: pointer;
-	font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 2em;
+  transition-duration: 0.3s;
+  font-family: "Daydream";
 }
 
-h1, h2, h3 {
-	font-family: Daydream;
+.x-button:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+
+  color: gray;
 }
 
-/* Sprites animés */
+h1,
+h2,
+h3 {
+  font-family: Daydream;
+}
+
+h2 {
+  font-size: medium;
+}
+
+h3 {
+  font-size: x-small;
+}
+
+.credits {
+  font-family: Daydream;
+  font-size: 0.6em;
+
+  background-color: white;
+  width: 60vw;
+  border: solid 5px black;
+  padding: 20px;
+  z-index: 10;
+  display: none;
+  position: relative;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* ------------------------ Sprites animés ------------------------ */
 
 /* Coin */
-.coin-wrap, .coin-wrap-regles  {
-	background-image: url(../images/coinSprite.png);
-	width: 16px;
-	height: 16px;
-	background-position: center left;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border: solid 0px #ccc;
-	animation: coin 1s steps(5) infinite;
-	cursor: pointer;
+.coin-wrap,
+.coin-wrap-regles {
+  background-image: url(../images/objets/coinSprite.png);
+  width: 16px;
+  height: 16px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 0px #ccc;
+  animation: coin 1s steps(5) infinite;
+  cursor: pointer;
+}
+
+.silver {
+  background-image: url(../images/objets/coinSpriteSilver.png);
+}
+
+.coin-wrap {
+  margin: 30px;
+  scale: 2;
 }
 
 .coin-wrap-regles {
-	transform: scale(2);
-	position: relative;
-	left:50%;
-	cursor:auto;
-
+  transform: scale(2);
+  position: relative;
+  left: 50%;
+  cursor: auto;
+  margin-bottom: 30px;
+  transition-duration: 0.3s;
 }
 
 @keyframes coin {
-	100% {
-		background-position: -80px;
-	}
+  100% {
+    background-position: -80px;
+  }
 }
 
-.bomb-wrap, .bomb-wrap-regles {
-	background-image: url(../images/bombSprite.png);
-	width: 30px;
-	height: 26px;
-	background-position: center left;
-	background-repeat: no-repeat;
-	background-size: cover;
-	cursor: pointer;
+.coin-wrap-regles:hover {
+  filter: brightness(150%);
+  transition-duration: 0.3s;
+}
+
+/* Bombe */
+.bomb-wrap,
+.bomb-wrap-regles {
+  background-image: url(../images/objets/bombSprite.png);
+  width: 30px;
+  height: 26px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  animation: bomb 2s steps(5) infinite;
 }
 
 .bomb-wrap-regles {
-	position: relative;
-	left:50%;
-	cursor:auto;
-	transform: scale(1.8);
+  position: relative;
+  left: 50%;
+  cursor: auto;
+  transform: scale(1.6);
+  margin-bottom: 30px;
+  transition-duration: 0.3s;
+}
+
+.bomb-wrap-regles:hover {
+  filter: brightness(50%);
+  transition-duration: 0.3s;
+}
+
+@keyframes bomb {
+  0% {
+    transform: scale(1.6) rotate(3deg);
+  }
+
+  10% {
+    transform: scale(1.6) rotate(-3deg);
+  }
+
+  20% {
+    transform: scale(1.6) rotate(3deg);
+  }
+
+  30% {
+    transform: scale(1.6) rotate(3deg);
+  }
+
+  30% {
+    transform: scale(1.6) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.6) rotate(0deg);
+  }
+}
+
+/* Gemmes */
+.gem-wrap-regles {
+  width: 10px;
+  height: 15px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 0px #ccc;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.gem-wrap-regles {
+  position: relative;
+  left: 47%;
+  cursor: auto;
+  margin-bottom: 30px;
+  transform: scale(2);
+  transition-duration: 0.3s;
+}
+
+.gem-autumn {
+  background-image: url(../images/objets/gemAutumn.png);
+}
+
+.gem-spring {
+  background-image: url(../images/objets/gemSpring.png);
+}
+
+.gem-summer {
+  background-image: url(../images/objets/gemSummer.png);
+}
+
+.gem-winter {
+  background-image: url(../images/objets/gemWinter.png);
+}
+
+.gem {
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.game-gem {
+  cursor: pointer;
+  margin: 30px;
+  scale: 2;
+}
+
+.gem-wrap-regles:hover,
+.gem:hover {
+  scale: 1.2;
+  transition-duration: 0.3s;
+}
+
+/* Vaisseaux */
+
+.skin-regles {
+  position: absolute;
+  left: 52%;
+  top: 43%;
+  width: 4%;
+  scale: 0.8;
+}
+
+.skin-regles:hover,
+.skin:hover {
+  animation: gelatine 1s 1;
+}
+
+.skin {
+  cursor: pointer;
+}
+
+@keyframes gelatine {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  10% {
+    transform: scale(0.9, 1.1);
+  }
+
+  30% {
+    transform: scale(1.1, 0.9);
+  }
+
+  50% {
+    transform: scale(0.95, 1.05);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* ------------------------ Jeu ------------------------ */
+
+.main-game {
+  display: none;
+  width: 110vw;
+  height: 100vh;
+  background-image: url("../images/background/autumnBG.jpg");
+  background-position: center;
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes transition-season {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/* ------------------------ Colonne gauche ------------------------ */
+
+.colonne-gauche {
+  /* border: solid red 2px; */
+  width: 18vw;
+  height: 18vh;
+  position: absolute;
+  left: 8%;
+  top: 73%;
+}
+
+#timer {
+  font-family: "Daydream";
+  border: solid black 5px;
+  background-color: white;
+  height: 5vh;
+  margin: 2vh 0 2vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.argent {
+  font-family: "Daydream";
+  border: solid black 5px;
+  background-color: white;
+  height: 5vh;
+  margin: 1vh 0 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.argent img {
+  padding: 10px;
+}
+
+/* ------------------------ Route / Colonne centrale ------------------------ */
+
+.road {
+  border-left: solid black 5px;
+  border-right: solid black 5px;
+  background-color: white;
+  height: 100%;
+  width: 30vw;
+  position: absolute;
+  left: 35%;
+  background-image: url("../images/background/trame.jpg");
+  background-size: 250%;
+  background-repeat: repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.player {
+  position: relative;
+  width: 60px;
+  height: 152px;
+  align-items: center;
+  justify-content: center;
+  animation: flying-player 3s ease-in-out infinite;
+}
+
+.scrolling-objects {
+  /* 	border: dashed red 8px; */
+  height: 500%;
+  width: 30vw;
+  position: absolute;
+  left: 35%;
+  bottom: 0;
+  animation: scrolling-anim 60s linear;
+  /* animation-delay: 2s; */
+}
+
+@keyframes scrolling-anim {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes flying-player {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* ------------------------ Colonne droite ------------------------ */
+
+.colonne-droite {
+  /* border: solid red 2px; */
+  width: 18vw;
+  height: 80vh;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+}
+
+.speaker-button-jeu {
+  border: solid black 5px;
+  background-color: white;
+  height: 6vh;
+  margin: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speaker-button-jeu img {
+  cursor: pointer;
+  transition-duration: 0.3s;
+  scale: 0.8;
+}
+
+.speaker-button-jeu img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+
+.skins {
+  border: solid black 5px;
+  background-color: white;
+  height: 6vh;
+  margin: 2vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skins img {
+  height: 3vh;
+  padding: 0px 6px;
+}
+
+.cadre-ship-illu {
+  border: solid black 5px;
+  background-color: white;
+  margin: 5vh 0 2vh 0;
+}
+
+.ship-illu {
+  width: 372px;
+  margin-left: -1vw;
+}
+
+.logo-jeu {
+  border: solid black 5px;
+  background-color: white;
+  padding: 10px;
+  width: 40%;
+  height: 50%;
+}
+
+.seasons {
+  border: solid black 5px;
+  background-color: white;
+  padding: 10px;
+  width: 40%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+
+.seasons-column {
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+}
+
+.seasons img {
+  width: 1vw;
+}
+
+/* ------------------ Fin du jeu ---------------------- */
+
+.game-over {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.game-over h2 {
+  color: beige;
+  font-size: 3em;
+}
+
+.button-retry {
+  color: beige;
+  font-size: 2em;
+  border: beige solid 8px;
+  width: fit-content;
+  height: fit-content;
+  padding: 50px;
+  font-family: "Daydream";
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.button-retry:hover {
+  background-color: beige;
+  border: black solid 8px;
+  color: black;
+  transition-duration: 0.3s;
+  transform: scale(1.2);
+}
+
+.end-game {
+  background-image: url("../images/background/trame.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.end-game h2 {
+  font-size: 3em;
+  padding: 2%;
+}
+
+.end-game h3 {
+  font-size: 1em;
+  padding: 2%;
+}
+
+.scores {
+  font-family: "Daydream";
+  padding: 6%;
+
+  background-image: url("../images/background/springBG.jpg");
+  border: solid black 3px;
+
+  transition-duration: 0.7s;
+
+  filter: grayscale(1);
+}
+
+.scores:hover {
+  transform: scale(1.2) rotate(2deg);
+  transition-duration: 0.7s;
+
+  filter: grayscale(0);
+}
+
+.confettis {
+  width: 100%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 15;
+
+  transform: translateY(120vh);
+
+  animation: confettis-anim 4s ease-in-out 1;
+}
+
+@keyframes confettis-anim {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(120vh);
+  }
+}
+
+.pourcentage {
+  font-size: 1.5em;
+  text-shadow: #fc0 1px 0 10px;
+}
+
+.retry-end {
+  /* display: none; */
+  font-family: "Daydream";
+  background-color: white;
+  cursor: pointer;
+  border: 5px solid black;
+  padding: 10px;
+  transition-duration: 0.7s;
+
+  margin: 50px;
+}
+
+.retry-end:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+  border: 5px solid white;
+  color: white;
+  background-color: black;
+}
+
+.made {
+  font-family: "Daydream";
+  font-size: 0.5em;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 700px) {
+  * {
+    transform: scale(0.8);
+  }
 }

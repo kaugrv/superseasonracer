@@ -2,60 +2,325 @@
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="copyright" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta name="language" content="fr" />
+    <title>Super Season Racer</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="">
-	<meta name="keywords" content="">
-	<meta name="copyright" content="">
-	<meta property="og:title" content="" />
-	<meta property="og:type" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:description" content="" />
-	<meta name="language" content="fr">
-	<title>Super Season Racer</title>
-	<link rel="icon" type="image/png" href="favicon.png">
-	<link rel="stylesheet" href="css/style.css">
+  <body>
+    <!-- Musique & sons -->
+    <audio id="main-music" loop src="musique/autumn.mp3"></audio>
+    <audio id="bonus-music" src="sons/bonus.mp3"></audio>
+    <audio id="coin-music" src="sons/coin.mp3"></audio>
+    <audio id="end-music" src="sons/end.mp3"></audio>
+    <audio id="explosion-music" src="sons/explosion.mp3"></audio>
+    <audio id="game-start-music" src="sons/game-start.mp3"></audio>
+    <audio id="win-music" src="sons/win.mp3"></audio>
 
-</head>
+    <!-- Introduction -->
+    <div class="introduction">
+      <div class="bloc-intro">
+        <img
+          src="images/LogoSeason.png"
+          alt="Logo du jeu Super Season Racer"
+          class="logo-intro"
+        />
+        <div class="ship-wrap">
+          <img
+            src="images/ships/shipIllu1.png"
+            alt="Vaisseau 1"
+            class="ship-intro"
+          />
+          <img
+            src="images/ships/ombre.png"
+            alt="Ombre du vaisseau"
+            class="ship-shadow"
+          />
+        </div>
 
-<body>
-	<!-- Introduction -->
-	<div class="bloc-intro">
-		<img src="images/LogoSeason.png" alt="Logo Super Season Racer" class="logo-intro" />
-		<div class="ship-wrap"><img src="images/shipIntropix.png" alt="Ship" class="ship-intro" /> <img
-				src="images/ombre.png" alt="Ombre" class="ship-shadow" /></div>
+        <div class="bloc-buttons">
+          <img
+            src="images/boutons/help.png"
+            class="help-button"
+            id="help-button"
+            alt="Bouton pour afficher les règles du jeu"
+          />
+          <img
+            src="images/boutons/copyright.png"
+            class="copyright-button"
+            id="copyright-button"
+            alt="Bouton pour afficher les crédits du jeu"
+          />
+          <span class="go-button" id="go-button" alt="Bouton démarrer le jeu"
+            >GO ▶
+          </span>
+        </div>
+      </div>
 
-	</div>
+      <div class="regles-jeu">
+        <h2>REGLES DU JEU</h2>
+        <br /><br />
+        <div id="x-button" class="x-button">x</div>
+        <div class="coin-wrap-regles"></div>
+        <h3>Ramasse le plus de pieces avant la fin du temps imparti!</h3>
+        <br />
 
-	<div class="bloc-buttons">
-		<span class="help-button" id="help-button">❓</span>
-		<span class="speaker-button" id="speaker-button"">🔈</span>
-		<span class=" go-button" id="go-button">GO ▶ </span>
-	</div>
+        <div class="gem-wrap-regles gem-autumn"></div>
+        <img
+          class="skin-regles"
+          src="images/objets/skin1.png"
+          alt="Objet couleur du vaisseau"
+        />
+        <h3>
+          Ramasse les bonus! <br /><br />Clique sur l'inventaire pour traverser
+          les saisons et personnaliser ton vaisseau!
+        </h3>
+        <br />
 
-	<div class="regles-jeu"><h2>REGLES DU JEU</h2><br><br> <div id="x-button" class="x-button">❌</div>
-		<div class="coin-wrap-regles"></div>
-		<h3> Ramasse le plus de pieces avant la fin du temps imparti! </h3><br>
+        <div class="bomb-wrap-regles"></div>
+        <h3>Ne ramasse PAS les bombes!</h3>
+        <br />
+      </div>
 
+      <div class="credits">
+        <h2>CREDITS</h2>
+        Jeu realise par
+        <a target="blank" href="https://linktr.ee/commandant.grant"
+          >Wendy Gervais</a
+        >
+        pour le cours d'Applications Interactives (<a
+          target="blank"
+          href="https://www.uqat.ca/"
+          >UQAT</a
+        >, 2023)<br /><br /><br />
+        Polices d'ecriture :
+        <a target="blank" href="https://www.dafont.com/fr/daydream-3.font"
+          >Daydream</a
+        >,
+        <a target="blank" href="https://www.dafont.com/fr/jagatraya.font"
+          >Jagatraya</a
+        ><br /><br />
+        Sprites :
+        <a target="blank" href="https://laredgames.itch.io/gems-coins-free"
+          >La Red Games</a
+        >,
+        <a
+          href="https://www.vecteezy.com/vector-art/10462548-bomb-explosion-pixel"
+          >Giuseppe Ramos</a
+        >,
+        <a
+          href="https://www.deviantart.com/gamersfangames/art/Pixel-Paintbrushes-601046626"
+          >GamersFanGames</a
+        >,
+        <a
+          href="https://www.deviantart.com/ethandoesathing/art/WipEout-F3600-Ship-Sprites-741171772"
+          >EthanDoesaThing</a
+        >,
+        <a
+          target="blank"
+          href="https://opengameart.org/sites/default/files/explosion-3.gif"
+          >OpenGameArt</a
+        >,
+        <a
+          href="https://i.pinimg.com/originals/b9/1c/85/b91c8596af46230afc03a94996043c86.png"
+          >ThreeDManiak</a
+        >,
+        <a
+          href="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fkq1dm19dpra61.png"
+          >Axello</a
+        ><br /><br />
+        Illustrations :
+        <a
+          href="https://fr.vecteezy.com/art-vectoriel/3482366-abstrait-technologie-fond-circuit-circuit-motif"
+          >supakritleela603730</a
+        >,
+        <a
+          href="https://fr.freepik.com/vecteurs-libre/vecteur-fond-conception-abstraite-demi-teinte_20112744.htm#query=texture%20trame&position=0&from_view=keyword&track=ais"
+          >Creative_hat</a
+        >,
+        <a target="blank" href="https://www.artstation.com/artwork/WmD5GJ"
+          >Justin R</a
+        >,
+        <a
+          href="https://www.deviantart.com/provellone/art/autumn-background-pixel-880672834"
+          >Provellone</a
+        ><br /><br />
+        Musiques :
+        <a target="blank" href="https://www.youtube.com/watch?v=FNxm3_3V2FI"
+          >GuitarboyAdvance : Autumn</a
+        >,
+        <a target="blank" href="https://www.youtube.com/watch?v=3gTXcn6q4Ns"
+          >Spring</a
+        >,
+        <a target="blank" href="https://www.youtube.com/watch?v=cNR3m7PXRZc"
+          >Summer</a
+        >,
+        <a target="blank" href="https://www.youtube.com/watch?v=soI8I0x878Q">
+          SuperWarMech : Winter
+        </a>
+        <br /><br />
+        Sons :
+        <a target="blank" href="https://pixabay.com/sound-effects/">Pixabay</a>
+        <div id="x-button-c" class="x-button">x</div>
+      </div>
+    </div>
 
-		<h3>Ramasse les bonus pour personnaliser le jeu!</h3><br>
+    <!-- Jeu -->
+    <div class="main-game" id="main-game">
+      <!-- Colonne gauche -->
+      <div class="colonne-gauche">
+        <div id="timer">35:00</div>
+        <div class="argent">
+          <img
+            src="images/objets/coinSpriteFixed.png"
+            alt="Icône pièce de monnaie"
+          /><span id="nbCoins">0</span>
+        </div>
+      </div>
 
-		<div class="bomb-wrap-regles"></div>
-		<h3>Ne ramasse PAS les bombes!</h3><br>
+      <!-- Colonne centrale -->
+      <div class="road">
+        <img
+          src="images/ships/ship1.png"
+          alt="Vaisseau du joueur"
+          class="player"
+          id="player"
+        />
+      </div>
+      <div class="scrolling-objects" id="scrolling-objects"></div>
 
-	</div>
+      <!-- Colonne droite -->
+      <div class="colonne-droite">
+        <img src="images/LogoSeason.png" alt="Logo du jeu" class="logo-jeu" />
+        <div class="seasons">
+          <div class="seasons-column">
+            <img
+              src="images/objets/gemAutumn.png"
+              id="season-holder-1"
+              class="gem"
+              alt="Objet pour changer la saison 1"
+            /><br /><br /><br />
+            <img
+              src="images/objets/gemPlaceHolder.png"
+              id="season-holder-2"
+              class="gem"
+              alt="Objet pour changer la saison 2"
+            /><br /><br /><br />
+            <img
+              src="images/objets/gemPlaceHolder.png"
+              id="season-holder-3"
+              class="gem"
+              alt="Objet pour changer la saison 3"
+            /><br /><br /><br />
+            <img
+              src="images/objets/gemPlaceHolder.png"
+              id="season-holder-4"
+              class="gem"
+              alt="Objet pour changer la saison 4"
+            />
+          </div>
+        </div>
 
-	<!-- Tests pièces -->
-	<!-- <div class="coin-wrap"></div>
-	<div class="coin-wrap"></div>
-	<div class="coin-wrap"></div>
-	<br>
-	<hr> -->
+        <div class="cadre-ship-illu">
+          <img
+            src="images/ships/shipIllu1.png"
+            alt="Vaisseau"
+            class="ship-illu"
+            id="ship-illu"
+          />
+        </div>
 
-	<script src="js/script.js"></script>
-</body>
+        <div class="skins">
+          <img
+            src="images/objets/skin1.png"
+            id="skin-holder-1"
+            class="skin"
+            alt="Objet couleur du vaisseau"
+          />
+          <img
+            src="images/objets/skinPlaceHolder.png"
+            id="skin-holder-2"
+            class="skin"
+            alt="Objet couleur du vaisseau"
+          />
+          <img
+            src="images/objets/skinPlaceHolder.png"
+            id="skin-holder-3"
+            class="skin"
+            alt="Objet couleur du vaisseau"
+          />
+          <img
+            src="images/objets/skinPlaceHolder.png"
+            id="skin-holder-4"
+            class="skin"
+            alt="Objet couleur du vaisseau"
+          />
+          <img
+            src="images/objets/skinPlaceHolder.png"
+            id="skin-holder-5"
+            class="skin"
+            alt="Objet couleur du vaisseau"
+          />
+          <img
+            src="images/objets/skinPlaceHolder.png"
+            id="skin-holder-6"
+            class="skin"
+            alt="Objet couleur du vaisseau"
+          />
+        </div>
+        <div class="speaker-button-jeu">
+          <img
+            src="images/boutons/soundOff.png"
+            id="speaker-button-jeu"
+            alt="Bouton pour activer ou désactiver le son"
+          />
+        </div>
+      </div>
+    </div>
 
+    <div class="game-over">
+      <h2>Perdu!</h2>
+      <br />
+      <div class="button-retry" id="button-retry">Recommencer?</div>
+    </div>
+
+    <div class="end-game">
+      <h2 id="end-text">Felicitations!!!</h2>
+
+      <div class="scores">
+        <span class="pourcentage">100%</span><br /><br />
+        Pieces : 5000 / 5000 <br />
+        Saisons : 4 / 4 <br />
+        Vaisseaux : 6 / 6 <br />
+      </div>
+
+      <h3 id="end-thx">Merci d'avoir joue !</h3>
+      <div class="retry-end">Recommencer</div>
+
+      <span class="made"
+        >Made by
+        <a
+          target="blank"
+          href="https://linktr.ee/commandant.grant"
+          alt="Mon site"
+          >Wendy</a
+        >
+        with ❤️</span
+      >
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>

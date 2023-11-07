@@ -1,23 +1,33 @@
-Polices d'écriture ---------------------------------------
-https://www.dafont.com/fr/corporation-games.font
-https://www.dafont.com/fr/jagatraya.font
-https://fonts.google.com/specimen/Wavefont
-https://www.dafont.com/fr/daydream-3.font
 
-Sprites --------------------------------------------------
-Coins : https://laredgames.itch.io/gems-coins-free
-Bomb : https://www.vecteezy.com/vector-art/10462548-bomb-explosion-pixel
+Tous les crédits sont aussi mentionnés sur l'introduction du jeu (fenêtre "C")!
 
-Ship : www.foozle.io
-Effets : https://bdragon1727.itch.io/free-effect-bullet-impact-explosion-32x32
-https://i.pinimg.com/474x/b9/1c/85/b91c8596af46230afc03a94996043c86--logo-google-advertising.jpg
-https://www.deviantart.com/ethandoesathing/art/WipEout-F3600-Ship-Sprites-741171772
+Polices d'écriture ----------------------------------------------------------------------------------------------------
+Daydream : DoubleGum https://www.dafont.com/fr/jagatraya.font
+Jagatraya : Alexa https://www.dafont.com/fr/daydream-3.font
 
-https://www.istockphoto.com/fr/vectoriel/carte-m%C3%A8re-transparente-motif-arri%C3%A8re-plan-de-vecteur-fond-d%C3%A9cran-de-circuit-gm908343316-250235199
+Sprites ---------------------------------------------------------------------------------------------------------------
+Coins and gems : La Red Games https://laredgames.itch.io/gems-coins-free
+Bomb : Giuseppe Ramos https://www.vecteezy.com/vector-art/10462548-bomb-explosion-pixel
+Brosse peinture : GamersFanGames https://www.deviantart.com/gamersfangames/art/Pixel-Paintbrushes-601046626
+Ship sprites : EthanDoesaThing https://www.deviantart.com/ethandoesathing/art/WipEout-F3600-Ship-Sprites-741171772
+Game over : OpenGameArt https://opengameart.org/sites/default/files/explosion-3.gif
 
-https://fr.vecteezy.com/art-vectoriel/3482366-abstrait-technologie-fond-circuit-circuit-motif
+Ship illustration 1 : ThreeDManiak https://i.pinimg.com/474x/b9/1c/85/b91c8596af46230afc03a94996043c86--logo-google-advertising.jpg
+Ship illustration 2 : Axello https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fkq1dm19dpra61.png
 
-https://fr.freepik.com/vecteurs-libre/vecteur-fond-conception-abstraite-demi-teinte_20112744.htm#query=texture%20trame&position=0&from_view=keyword&track=ais
+Fond : supakritleela603730  https://fr.vecteezy.com/art-vectoriel/3482366-abstrait-technologie-fond-circuit-circuit-motif
+Fond 2 : Creative_hat https://fr.freepik.com/vecteurs-libre/vecteur-fond-conception-abstraite-demi-teinte_20112744.htm#query=texture%20trame&position=0&from_view=keyword&track=ais
 
-Outil de pixellisation --------------------------------------
-https://pixel-me.tokyo/en/
+Fonds saison :
+Justin R https://www.artstation.com/artwork/WmD5GJ
+Provellone https://www.deviantart.com/provellone/art/autumn-background-pixel-880672834
+
+
+Musiques ----------------------------------------------------------------------------------------------------------------
+Autumn : https://www.youtube.com/watch?v=FNxm3_3V2FI
+Spring : https://www.youtube.com/watch?v=3gTXcn6q4Ns
+Winter : https://www.youtube.com/watch?v=soI8I0x878Q
+Summer : https://www.youtube.com/watch?v=cNR3m7PXRZc
+
+Sons --------------------------------------------------------------------------------------------------------------------
+https://pixabay.com/sound-effects/
